@@ -43,7 +43,7 @@ before_build:
 build_script:
 - cmd: |-
     set PATH=%PYTHON%;%PATH%
-    ./buildplugin
+    .\buildplugin
  
 
 artifacts:
