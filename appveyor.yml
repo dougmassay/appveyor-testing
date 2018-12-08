@@ -2,6 +2,7 @@
 
 branches:
   only:
+  - master
   - /v\d+\.\d+\.\d+(-\d+)?/
   
 clone_folder: c:\project\appveyor_testing
@@ -12,6 +13,8 @@ image:
 configuration: Release
 
 platform: x64
+
+skip_tags: true
 
 init:
   # Configure the AppVeyor build version to ${branch-name}-${git-revision}-${timestamp}
