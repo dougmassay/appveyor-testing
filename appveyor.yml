@@ -44,14 +44,14 @@ artifacts:
     name: plugin
 
 deploy:
-- provider: Github
-    tag: $(APPVEYOR_REPO_BRANCH)
-    name: AppveyorTesting $(APPVEYOR_REPO_BRANCH)
-    description: 'Test Draft Release'
-    auth_token:
-      secure: QM747yzK0qkUTP1k/zQXGbxvvWK97YQpC5+6oAX6FTCPI+jYlB2zf4mzdcFj/uPL
-    artifact: plugin
-    draft: true
-    on:
-      branch: /v\d+\.\d+\.\d+(-\d+)?/
+  provider: Github
+  tag: $(APPVEYOR_REPO_BRANCH)
+  name: AppveyorTesting $(APPVEYOR_REPO_BRANCH)
+  description: 'Test Draft Release'
+  auth_token:
+    secure: QM747yzK0qkUTP1k/zQXGbxvvWK97YQpC5+6oAX6FTCPI+jYlB2zf4mzdcFj/uPL
+  artifact: plugin
+  draft: true
+  on:
+    branch: /v\d+\.\d+\.\d+(-\d+)?/
 
