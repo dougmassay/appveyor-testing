@@ -1,8 +1,7 @@
-version: '0.2.5-{build}'
+#version: '0.2.5-{build}'
 
 branches:
   only:
-  - master
   - /v\d+\.\d+\.\d+(-\d+)?/
   
 clone_folder: c:\project\appveyor_testing
@@ -14,18 +13,24 @@ configuration: Release
 
 platform: x64
 
-clone_script:
-- ps: >-
-    if(-not $env:appveyor_pull_request_number) {
-      git clone -q --depth=1 --branch=$env:appveyor_repo_branch https://github.com/$env:appveyor_repo_name.git $env:appveyor_build_folder
-      git checkout -qf $env:appveyor_repo_commit
-    } else {
-      git clone -q --depth=1 https://github.com/$env:appveyor_repo_name.git $env:appveyor_build_folder 
-      git fetch -q origin +refs/pull/$env:appveyor_pull_request_number/merge:
-      git checkout -qf FETCH_HEAD
-    }
+init:
+  # Configure the AppVeyor build version to ${branch-name}-${git-revision}-${timestamp}
+  - ps: $commit = $env:appveyor_repo_commit.SubString(0,7)
+  - ps: $timestamp = $env:appveyor_repo_commit_timestamp.SubString(0,10)
+  - ps: Update-AppveyorBuild -Version ("{0}-{1}-{2}" -f $env:appveyor_repo_branch, $commit, $timestamp)
+
+#clone_script:
+#- ps: >-
+#    if(-not $env:appveyor_pull_request_number) {
+#      git clone -q --depth=1 --branch=$env:appveyor_repo_branch https://github.com/$env:appveyor_repo_name.git $env:appveyor_build_folder
+#      git checkout -qf $env:appveyor_repo_commit
+#    } else {
+#      git clone -q --depth=1 https://github.com/$env:appveyor_repo_name.git $env:appveyor_build_folder 
+#      git fetch -q origin +refs/pull/$env:appveyor_pull_request_number/merge:
+#      git checkout -qf FETCH_HEAD
+#    }
     
-    Set-Location $env:appveyor_build_folder
+#    Set-Location $env:appveyor_build_folder
 
 
 environment:
