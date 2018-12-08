@@ -14,7 +14,7 @@ import zipfile
 
 
 SCRIPT_DIR = os.path.dirname(os.path.abspath(inspect.getfile(inspect.currentframe())))
-PLUGIN_NAME = 'AppveyorTesing'
+PLUGIN_NAME = 'AppveyorTesting'
 TEMP_DIR = os.path.join(SCRIPT_DIR, PLUGIN_NAME)
 
 PLUGIN_FILES = ['mmth',
