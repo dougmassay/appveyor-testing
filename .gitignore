@@ -1,29 +1,13 @@
 # Byte-compiled / optimized / DLL files
 __pycache__/
 *.py[cod]
-*$py.class
 
-# C extensions
-*.so
+*.DS_Store
 
-# Distribution / packaging
-.Python
-build/
-develop-eggs/
-dist/
-downloads/
-eggs/
-.eggs/
-lib/
-lib64/
-parts/
-sdist/
-var/
-wheels/
-*.egg-info/
-.installed.cfg
-*.egg
-MANIFEST
+# Vim temp/swap files
+*~
+*.swp
+*.swo
 
 # PyInstaller
 #  Usually these files are written by a python script from a template
@@ -39,66 +23,27 @@ pip-delete-this-directory.txt
 htmlcov/
 .tox/
 .coverage
-.coverage.*
 .cache
 nosetests.xml
 coverage.xml
-*.cover
-.hypothesis/
-.pytest_cache/
 
 # Translations
 *.mo
 *.pot
 
-# Django stuff:
 *.log
-local_settings.py
-db.sqlite3
-
-# Flask stuff:
-instance/
-.webassets-cache
-
-# Scrapy stuff:
-.scrapy
-
-# Sphinx documentation
-docs/_build/
 
 # PyBuilder
 target/
 
-# Jupyter Notebook
-.ipynb_checkpoints
+*.ini
 
-# pyenv
-.python-version
+# Temporary build directories
+docximport/
 
-# celery beat schedule file
-celerybeat-schedule
+# Zip files (plugin releases)
+*.zip
+*.tar.gz
 
-# SageMath parsed files
-*.sage.py
-
-# Environments
-.env
-.venv
-env/
-venv/
-ENV/
-env.bak/
-venv.bak/
-
-# Spyder project settings
-.spyderproject
-.spyproject
-
-# Rope project settings
-.ropeproject
-
-# mkdocs documentation
-/site
-
-# mypy
-.mypy_cache/
+# compiled translations files
+*.qm
