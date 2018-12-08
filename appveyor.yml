@@ -44,7 +44,7 @@ artifacts:
     name: plugin
 
 deploy:
-  - provider: Github
+  - provider: GitHub
     auth_token:
       secure: QM747yzK0qkUTP1k/zQXGbxvvWK97YQpC5+6oAX6FTCPI+jYlB2zf4mzdcFj/uPL
     release: AppveyorTesting $(APPVEYOR_REPO_BRANCH)
